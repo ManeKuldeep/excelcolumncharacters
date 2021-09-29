@@ -1,0 +1,24 @@
+{
+  "name": "excelcolumncharacters",
+  "version": "1.0.0",
+  "description": "A simple set of functions to generate character(s) like excel columns names.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManeKuldeep/excelcolumncharacters.git"
+  },
+  "keywords": [
+    "excel column characters",
+    "excel columns",
+    "excel"
+  ],
+  "author": "Kuldeep Mane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManeKuldeep/excelcolumncharacters/issues"
+  },
+  "homepage": "https://github.com/ManeKuldeep/excelcolumncharacters#readme"
+}

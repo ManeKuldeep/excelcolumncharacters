@@ -36,7 +36,7 @@ const getColumnName = (columnNumber) => {
  * @param {number} columnNumber - columnNumber as a number
  * @returns {*} array of excel column names
  */
-const getColumnArray = (columnNumber) => {
+const getColumnNameArray = (columnNumber) => {
 
     return new Promise(resolve => {
         // to store all columns
@@ -71,9 +71,52 @@ const getColumnArray = (columnNumber) => {
 }
 
 /**
+ * Converts excel column name to its corresponding excel column number
+ * @param {number} columnName - columnName as a string
+ * @returns {*} columnName converted to the particular column number
+ */
+const getColumnNumber = (columnName) => {
+    return new Promise(resolve => {
+
+        var digits = columnName.toUpperCase().split(''),
+            number = 0;
+
+        for (var i = 0; i < digits.length; i++) {
+            number += (digits[i].charCodeAt(0) - 64) * Math.pow(26, digits.length - i - 1);
+        }
+
+        resolve(number)
+    })
+}
+
+/**
+ * Converts excel column name to its corresponding excel column number
+ * @param {number} columnNames - columnName as a array of string 
+ * @returns {*} array of excel column numbers
+ */
+const getColumnNumberArray = (columnNames) => {
+    return new Promise(resolve => {
+        let excelColumnNumbers = []
+
+        for (let n = 0; n < columnNames.length; n++) {
+            var digits = columnNames[n].toUpperCase().split(''),
+                number = 0;
+
+            for (var i = 0; i < digits.length; i++) {
+                number += (digits[i].charCodeAt(0) - 64) * Math.pow(26, digits.length - i - 1);
+            }
+            excelColumnNumbers.push(number)
+        }
+        resolve(excelColumnNumbers)
+    })
+}
+
+/**
  *@module excelcolumncharacters
  */
 module.exports = {
     getColumnName,
-    getColumnArray
+    getColumnNameArray,
+    getColumnNumber,
+    getColumnNumberArray
 };

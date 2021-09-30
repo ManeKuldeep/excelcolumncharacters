@@ -1,4 +1,12 @@
-# excelcolumncharacters
+# Excel Column Characters
+
+# Install
+
+```sh
+$ npm i excelcolumncharacters
+```
+
+# Usage
 
 A simple set of functions to generate character(s) like excel columns names.
 
@@ -66,4 +74,44 @@ console.log(columnArray);
  'K', 'L', 'M', 'N', 'O',
  'P', 'Q', 'R', 'S', 'T'
 ]
+```
+
+## _Excel column number from given column name_
+
+Convert a column name to corresponding excel column number.
+
+**_Example_**
+
+```javascript
+const { getColumnNumber } = require("excelcolumncharacters");
+
+const columnNumber = await getColumnNumber("AAC"); // returns a promise
+
+console.log(columnNumber);
+```
+
+**_Output_**
+
+```
+705
+```
+
+## _Excel column number from given column name_
+
+Generate array of excel column numbers from provided array of column numbers.
+
+**_Example_**
+
+```javascript
+const { getColumnNumberArray } = require("excelcolumncharacters");
+
+const columnNumberArray = await getColumnNumberArray(["a", "aac"]); // returns a promise
+
+console.log(columnNumberArray);
+```
+
+**_Output_**
+
+```
+[ 1, 705 ]
 ```
